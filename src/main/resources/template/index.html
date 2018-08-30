@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>kotlinjs-demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="title"></div>
+<div class="container">
+    <style>
+        .users {
+            color: darkcyan;
+        }
 
-<script type="text/javascript" src="../static/kotlin.js"></script>
-<script type="text/javascript" src="../static/app.js"></script>
-<script type="text/javascript" >
-    var K = app
-    K.demo.say()
-    var d = K.demo.getDate_za3lpa$(3)
-    console.log(d)
-</script>
+        .li {
+            font-size: 1.5em;
+        }
 
+        .books {
+            color: darkorange;
+        }
+    </style>
+
+    <div id="title"></div>
+    <h3>编程语言</h3>
+    <div id="users"></div>
+    <h3>图书列表</h3>
+    <div id="books"></div>
+    <script type="text/javascript" src="../static/kotlin.js"></script>
+    <script type="text/javascript" src="../static/kotlinx-html-js.js"></script>
+    <script type="text/javascript" src="../static/app.js"></script>
+    <script type="text/javascript">
+        var K = app
+        K.demo.say()
+        var d = K.demo.getDate_za3lpa$(3)
+        console.log(d)
+    </script>
+</div>
 </body>
 </html>

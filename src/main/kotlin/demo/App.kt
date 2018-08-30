@@ -3,6 +3,7 @@ package demo
 import kotlin.browser.document
 import kotlin.js.Date
 
+class App
 
 fun say() {
     println("Hello,World")
@@ -14,16 +15,17 @@ fun getDate(n: Int): Date {
     return Date(ntime)
 }
 
-fun renderTable() {
+fun renderTitle() {
     val e = document.getElementById("title")
     e?.innerHTML = """
         <h1>Kotlin VS. JavaScript</h1>
     """.trimIndent()
 }
 
-
 fun main(args: Array<String>) {
     say()
     getDate(2)
-    renderTable()
+    renderTitle()
+    UserList().users()
+    BookList().books()
 }

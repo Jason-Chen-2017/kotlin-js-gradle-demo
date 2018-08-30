@@ -15,13 +15,22 @@ buildscript {
 
 apply plugin: 'kotlin2js'
 
+
 repositories {
     mavenCentral()
+    jcenter()
+
+
+
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+
+    def kotlinx_html_version = "0.6.10"
+    // include for client-side
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:${kotlinx_html_version}"
 }
 
 build.doLast {
@@ -34,9 +43,8 @@ build.doLast {
             include { fileTreeElement ->
                 def path = fileTreeElement.path
                 println(path)
-                path == "kotlin.js"
+                path.endsWith(".js")
             }
-
         }
     }
 }
